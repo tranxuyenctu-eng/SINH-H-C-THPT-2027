@@ -14,6 +14,16 @@
     
     <!-- CSS Style sheets -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- CSS Chống bôi đen sao chép cho trang chính -->
+    <style>
+        body {
+            -webkit-user-select: none !important;
+            -moz-user-select: none !important;
+            -ms-user-select: none !important;
+            user-select: none !important;
+        }
+    </style>
 </head>
 <body>
     <!-- Background Elements for Glassmorphic Visuals -->
@@ -68,7 +78,7 @@
             <div class="hero-content">
                 <span class="badge-hero">Tài Nguyên Giáo Dục Sinh Học</span>
                 <h1 class="hero-title">Hệ Thống Bài Tập & <br><span class="gradient-text">Tài Liệu Sinh Học THPT</span></h1>
-                <p class="hero-subtitle">Nơi lưu trữ, làm bài tập trắc nghiệm tương tác HTML môn Sinh học Lớp 10, 11, 12, Đề thi thử THPT Quốc gia & Infographic tóm tắt kiến thức.</p>
+                <p class="hero-subtitle">Nơi làm bài tập trắc nghiệm tương tác Sinh học Lớp 10, 11, 12, Đề thi thử THPT Quốc gia & Infographic tóm tắt kiến thức.</p>
                 
                 <!-- Search Box -->
                 <div class="search-wrapper">
@@ -162,7 +172,6 @@
 
             <!-- Materials Grid -->
             <div class="materials-grid" id="materials-grid">
-                <!-- JavaScript will populate cards here -->
                 <div class="grid-loader">
                     <div class="spinner"></div>
                     <p>Đang tải danh sách tài liệu...</p>
@@ -197,22 +206,22 @@
                     <p>Click vào nút <strong>"Làm bài / Xem trước"</strong> trên các thẻ tài liệu. Giao diện bài tập HTML sẽ hiển thị trực tiếp trên web giúp bạn trả lời trắc nghiệm, điền khuyết và biết kết quả ngay lập tức.</p>
                 </div>
                 <div class="guide-item">
-                    <h4>💾 Cách tải bài tập về máy</h4>
-                    <p>Bấm nút <strong>"Tải xuống"</strong> để lưu bài tập về máy tính hoặc điện thoại. Bạn có thể mở tệp HTML này offline (không cần mạng) bằng bất kỳ trình duyệt nào (Chrome, Safari, Edge) để tự học.</p>
+                    <h4>🔒 Bảo vệ bản quyền tài liệu</h4>
+                    <p>Hệ thống không cho phép tải trực tiếp tệp bài tập và chặn các thao tác bôi đen sao chép văn bản, chụp/in trang để giữ an toàn tối đa cho học liệu của bạn.</p>
                 </div>
                 <div class="guide-item">
                     <h4>🎨 Infographics & Sơ đồ tư duy</h4>
-                    <p>Tải bộ sơ đồ tư duy dạng SVG/PNG sắc nét về làm tài liệu ôn tập nhanh trước kỳ thi. Bạn có thể in màu ra khổ giấy A4 để dán góc học tập.</p>
+                    <p>Xem trực quan sơ đồ tư duy ngay trên màn hình. Rất thích hợp để giáo viên chiếu lên bảng giảng dạy hoặc học sinh học nhanh lý thuyết.</p>
                 </div>
                 <div class="guide-item">
                     <h4>🚀 Tải tài liệu mới lên Web</h4>
-                    <p>Đây là trang web tĩnh chạy bằng GitHub Pages. Bạn chỉ cần sửa tệp <code>data.js</code> để thêm thông tin bài tập, sau đó copy file HTML bài tập mới của bạn vào thư mục <code>data/</code> tương ứng.</p>
+                    <p>Sắp xếp bài tập mới của bạn trong thư mục <code>data/</code> trên GitHub, sau đó khai báo chúng trong tệp tin <code>data.js</code> để hệ thống tự động nhận diện và cập nhật.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- HTML Exercise Preview Modal (Iframe integration) -->
+    <!-- HTML Exercise Preview Modal -->
     <div id="preview-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-backdrop" id="modal-backdrop"></div>
         <div class="modal-content glass-card">
@@ -225,7 +234,6 @@
             </div>
             
             <div class="modal-body">
-                <!-- If it's an image (infographic), show image, if HTML show iframe -->
                 <div class="iframe-container" id="iframe-container">
                     <iframe id="preview-iframe" src="" title="Xem trước bài tập Sinh học"></iframe>
                 </div>
@@ -234,7 +242,7 @@
                 </div>
             </div>
             
-                        <div class="modal-footer">
+            <div class="modal-footer">
                 <span class="file-size-info" id="modal-file-size">Dung lượng: -- KB</span>
                 <div class="modal-actions">
                     <button id="modal-close-action" class="btn btn-primary">Đóng lại</button>
