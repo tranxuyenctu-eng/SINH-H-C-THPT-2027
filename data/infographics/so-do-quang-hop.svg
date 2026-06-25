@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <!-- Definitions for Gradients and Filters -->
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#022c22" />
+    </linearGradient>
+    
+    <!-- Light Stage Card Gradient -->
+    <linearGradient id="lightGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0ea5e9" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <!-- Dark Stage Card Gradient -->
+    <linearGradient id="darkGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#047857" />
+    </linearGradient>
+
+    <!-- Sun Glow Gradient -->
+    <radialGradient id="sunGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fef08a" stop-opacity="1" />
+      <stop offset="100%" stop-color="#eab308" stop-opacity="0" />
+    </radialGradient>
+
+    <!-- Card Shadow Filter -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <dropShadow dx="0" dy="8" stdDeviation="6" flood-color="#000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" rx="16" fill="url(#bgGrad)" />
+
+  <!-- Grid overlay for technical feel -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="100" y1="0" x2="100" y2="500" />
+    <line x1="200" y1="0" x2="200" y2="500" />
+    <line x1="300" y1="0" x2="300" y2="500" />
+    <line x1="400" y1="0" x2="400" y2="500" />
+    <line x1="500" y1="0" x2="500" y2="500" />
+    <line x1="600" y1="0" x2="600" y2="500" />
+    <line x1="700" y1="0" x2="700" y2="500" />
+    <line x1="0" y1="100" x2="800" y2="100" />
+    <line x1="0" y1="200" x2="800" y2="200" />
+    <line x1="0" y1="300" x2="800" y2="300" />
+    <line x1="0" y1="400" x2="800" y2="400" />
+  </g>
+
+  <!-- Title -->
+  <text x="400" y="45" font-family="sans-serif" font-size="24" font-weight="bold" fill="#34d399" text-anchor="middle" letter-spacing="1">SƠ ĐỒ TƯ DUY: QUÁ TRÌNH QUANG HỢP Ở THỰC VẬT</text>
+  <text x="400" y="70" font-family="sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">Tổng quan 2 pha của quá trình quang hợp trong lục lạp</text>
+
+  <!-- Chloroplast Boundary (Lục lạp) -->
+  <rect x="80" y="100" width="640" height="320" rx="40" fill="none" stroke="#059669" stroke-width="3" stroke-dasharray="10 5" opacity="0.6" />
+  <text x="100" y="130" font-family="sans-serif" font-size="14" font-weight="bold" fill="#059669" opacity="0.8">LỤC LẠP (CHLOROPLAST)</text>
+
+  <!-- Sun & Light Input -->
+  <circle cx="130" cy="50" r="40" fill="url(#sunGlow)" opacity="0.5" />
+  <circle cx="130" cy="50" r="20" fill="#fef08a" />
+  <path d="M130 50 L180 150" stroke="#facc15" stroke-width="3" stroke-dasharray="5 3" marker-end="url(#arrow)" />
+  <text x="175" y="100" font-family="sans-serif" font-size="12" font-weight="bold" fill="#facc15" transform="rotate(27 130 50)">ÁNH SÁNG</text>
+
+  <!-- H2O Input -->
+  <text x="210" y="65" font-family="sans-serif" font-size="16" font-weight="bold" fill="#38bdf8" text-anchor="middle">H₂O</text>
+  <path d="M210 80 L210 160" stroke="#38bdf8" stroke-width="3" fill="none" />
+  <!-- Arrow head -->
+  <polygon points="210,165 205,155 215,155" fill="#38bdf8" />
+
+  <!-- CO2 Input -->
+  <text x="590" y="65" font-family="sans-serif" font-size="16" font-weight="bold" fill="#f43f5e" text-anchor="middle">CO₂</text>
+  <path d="M590 80 L590 160" stroke="#f43f5e" stroke-width="3" fill="none" />
+  <polygon points="590,165 585,155 595,155" fill="#f43f5e" />
+
+  <!-- PHASE 1: LIGHT-DEPENDENT STAGE (Pha sáng) -->
+  <rect x="130" y="170" width="180" height="150" rx="16" fill="url(#lightGrad)" filter="url(#shadow)" />
+  <text x="220" y="205" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">PHA SÁNG</text>
+  <text x="220" y="230" font-family="sans-serif" font-size="12" fill="#e0f2fe" text-anchor="middle">Diễn ra ở màng Thylakoid</text>
+  
+  <!-- Light details -->
+  <rect x="150" y="250" width="140" height="50" rx="8" fill="rgba(255,255,255,0.15)" />
+  <text x="220" y="268" font-family="sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">Quang phân ly H₂O</text>
+  <text x="220" y="285" font-family="sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">Tạo ATP &amp; NADPH</text>
+
+  <!-- PHASE 2: CALVIN CYCLE / DARK STAGE (Pha tối / Chu trình Calvin) -->
+  <rect x="490" y="170" width="180" height="150" rx="16" fill="url(#darkGrad)" filter="url(#shadow)" />
+  <text x="580" y="205" font-family="sans-serif" font-size="18" font-weight="bold" fill="#ffffff" text-anchor="middle">PHA TỐI</text>
+  <text x="580" y="230" font-family="sans-serif" font-size="12" fill="#d1fae5" text-anchor="middle">(Chu trình Calvin)</text>
+  <text x="580" y="245" font-family="sans-serif" font-size="12" fill="#d1fae5" text-anchor="middle">Diễn ra ở Chất nền (Stroma)</text>
+  
+  <!-- Dark details -->
+  <rect x="510" y="260" width="140" height="40" rx="8" fill="rgba(255,255,255,0.15)" />
+  <text x="580" y="276" font-family="sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">Cố định CO₂</text>
+  <text x="580" y="292" font-family="sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">Sử dụng ATP &amp; NADPH</text>
+
+  <!-- O2 Output -->
+  <path d="M210 320 L210 410" stroke="#34d399" stroke-width="3" fill="none" />
+  <polygon points="210,415 205,405 215,405" fill="#34d399" />
+  <text x="210" y="435" font-family="sans-serif" font-size="16" font-weight="bold" fill="#34d399" text-anchor="middle">O₂ (Giải phóng)</text>
+
+  <!-- Glucose Output -->
+  <path d="M590 320 L590 410" stroke="#f59e0b" stroke-width="3" fill="none" />
+  <polygon points="590,415 585,405 595,405" fill="#f59e0b" />
+  <text x="590" y="435" font-family="sans-serif" font-size="16" font-weight="bold" fill="#f59e0b" text-anchor="middle">C₆H₁₂O₆ (Đường)</text>
+
+  <!-- Connecting Arrows from Light to Dark (ATP/NADPH) -->
+  <path d="M310 210 Q400 170 490 210" stroke="#facc15" stroke-width="3" fill="none" stroke-dasharray="2" />
+  <polygon points="490,210 478,206 483,215" fill="#facc15" />
+  <text x="400" y="175" font-family="sans-serif" font-size="12" font-weight="bold" fill="#facc15" text-anchor="middle">ATP + NADPH</text>
+
+  <!-- Connecting Arrows from Dark to Light (ADP + Pi / NADP+) -->
+  <path d="M490 280 Q400 320 310 280" stroke="#94a3b8" stroke-width="3" fill="none" stroke-dasharray="2" />
+  <polygon points="310,280 322,284 317,275" fill="#94a3b8" />
+  <text x="400" y="325" font-family="sans-serif" font-size="12" font-weight="bold" fill="#94a3b8" text-anchor="middle">ADP + NADP⁺</text>
+</svg>
