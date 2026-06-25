@@ -1,6 +1,6 @@
 // SCRIPT ĐIỀU KHIỂN HOẠT ĐỘNG - BIOHUB
 document.addEventListener("DOMContentLoaded", () => {
-    // --- KHAIR BÁO CÁC PHẦN TỬ DOM ---
+    // --- KHAI BÁO CÁC PHẦN TỬ DOM ---
     const searchInput = document.getElementById("search-input");
     const searchClearBtn = document.getElementById("search-clear-btn");
     const materialsGrid = document.getElementById("materials-grid");
@@ -32,6 +32,39 @@ document.addEventListener("DOMContentLoaded", () => {
     const modalFileSize = document.getElementById("modal-file-size");
     const iframeContainer = document.getElementById("iframe-container");
     const previewIframe = document.getElementById("preview-iframe");
+    
+    // Bảo vệ nội dung bên trong Iframe (chống bôi đen, chuột phải, phím tắt lưu tệp)
+    previewIframe.addEventListener("load", () => {
+        try {
+            const iframeDoc = previewIframe.contentDocument || previewIframe.contentWindow.document;
+            if (iframeDoc) {
+                // Tiêm CSS chống bôi đen bôi màu chọn chữ
+                const style = iframeDoc.createElement("style");
+                style.textContent = `
+                    * {
+                        -webkit-user-select: none !important;
+                        -moz-user-select: none !important;
+                        -ms-user-select: none !important;
+                        user-select: none !important;
+                    }
+                `;
+                iframeDoc.head.appendChild(style);
+                
+                // Chặn chuột phải trong iframe
+                iframeDoc.addEventListener("contextmenu", (e) => e.preventDefault());
+                
+                // Chặn lưu trang Ctrl+S, in ấn Ctrl+P trong iframe
+                iframeDoc.addEventListener("keydown", (e) => {
+                    if ((e.ctrlKey || e.metaKey) && ["s", "S", "p", "P"].includes(e.key)) {
+                        e.preventDefault();
+                    }
+                });
+            }
+        } catch (error) {
+            console.warn("Không thể can thiệp bảo mật iframe (có thể do CORS):", error);
+        }
+    });
+
     const imagePreviewContainer = document.getElementById("image-preview-container");
     const previewImage = document.getElementById("preview-image");
 
@@ -103,7 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // --- RENDER DANH SÁCH THẺ BÀI TẬP ---
+    // --- RENDER DANH SÁCH THÊ BÀI TẬP ---
     function renderMaterials() {
         materialsGrid.innerHTML = "";
         
@@ -294,12 +327,10 @@ document.addEventListener("DOMContentLoaded", () => {
     renderMaterials();
 
     // --- BẢO VỆ TÀI LIỆU (CHỐNG TẢI VỀ / CHỐNG SAO CHÉP) ---
-    // Ngăn chặn menu chuột phải trên toàn trang
     document.addEventListener("contextmenu", (e) => {
         e.preventDefault();
     });
 
-    // Ngăn chặn các phím tắt lưu trang (Ctrl + S, Ctrl + P)
     document.addEventListener("keydown", (e) => {
         if ((e.ctrlKey || e.metaKey) && ["s", "S", "p", "P"].includes(e.key)) {
             e.preventDefault();
