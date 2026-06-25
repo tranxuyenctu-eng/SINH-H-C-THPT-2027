@@ -1,36 +1,30 @@
-// CƠ SỞ DỮ LIỆU TÀI LIỆU SINH HỌC THỰC TẾ CỦA BẠN
 const BIOLOGY_DATA = [
-  // --- SINH HỌC 10 ---
   {
     id: "bio10-01",
     title: "Bài tập Ôn tập Sinh học 10 (Không đáp án)",
     category: "lop-10",
     topic: "Ôn tập tổng hợp",
-    filePath: "data/sinh-hoc-10/sinhhoc10_ontap nonkey.html", // Khớp tên file thực tế của bạn
+    filePath: "data/sinh-hoc-10/sinhhoc10_ontap nonkey.html",
     size: "15 KB",
     description: "Tài liệu ôn tập trắc nghiệm Sinh học 10 phiên bản học sinh tự luyện tập.",
     dateAdded: "2026-06-25"
   },
-
-  // --- SINH HỌC 11 ---
   {
     id: "bio11-01",
     title: "Bài tập Ôn tập Sinh học 11 - Bản chính thức",
     category: "lop-11",
     topic: "Ôn tập tổng hợp",
-    filePath: "data/sinh-hoc-11/sinhhoc11_ontap FINAL.html", // Khớp tên file thực tế của bạn
+    filePath: "data/sinh-hoc-11/sinhhoc11_ontap FINAL.html",
     size: "20 KB",
     description: "Bộ câu hỏi ôn tập củng cố kiến thức chương trình Sinh học lớp 11 bản hoàn thiện.",
     dateAdded: "2026-06-25"
   },
-
-  // --- SINH HỌC 12 ---
   {
     id: "bio12-01",
     title: "Tài liệu lý thuyết & bài tập tự luận Sinh học 12",
     category: "lop-12",
     topic: "Di truyền & Tiến hóa",
-    filePath: "data/sinh-hoc-12/SinhHoc12_TaiLieuChuan_Tuluan.html", // (Hãy đổi lại tên file này trong code nếu tên file thực tế của bạn viết khác đi một chút)
+    filePath: "data/sinh-hoc-12/SinhHoc12_TaiLieuChuan_Tuluan.html",
     size: "35 KB",
     description: "Tổng hợp câu hỏi tự luận chuẩn kiến thức kỹ năng môn Sinh học lớp 12.",
     dateAdded: "2026-06-25"
@@ -40,13 +34,11 @@ const BIOLOGY_DATA = [
     title: "Bài 1: Gen, mã di truyền và quá trình nhân đôi ADN",
     category: "lop-12",
     topic: "Cơ chế di truyền",
-    filePath: "data/sinh-hoc-12/bai 1 gen ma di truyen nhan doi adn.html", // Khớp tên file thực tế của bạn
+    filePath: "data/sinh-hoc-12/bai 1 gen ma di truyen nhan doi adn.html",
     size: "25 KB",
     description: "Câu hỏi trắc nghiệm tương tác về cơ chế nhân đôi ADN và mã di truyền.",
     dateAdded: "2026-06-25"
   },
-
-  // --- ĐỀ THI THỬ ---
   {
     id: "exam-01",
     title: "Đề thi thử Tốt nghiệp THPT môn Sinh học - Đề số 1",
@@ -67,14 +59,12 @@ const BIOLOGY_DATA = [
     description: "Đề khảo sát đầu năm đánh giá năng lực học sinh bước vào chương trình lớp 12.",
     dateAdded: "2026-06-25"
   },
-
-  // --- INFOGRAPHICS ---
   {
     id: "info-01",
     title: "Sơ đồ tư duy quang hợp ở thực vật",
     category: "infographics",
     topic: "Sinh học thực vật",
-    filePath: "data/infographics/so do quang hop.svg", // Tên file có dấu cách thực tế của bạn
+    filePath: "data/infographics/so do quang hop.svg",
     size: "120 KB",
     description: "Sơ đồ tư duy trực quan hóa hai pha của quá trình quang hợp.",
     dateAdded: "2026-06-25"
